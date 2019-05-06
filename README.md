@@ -4,7 +4,7 @@
 New package which allows us to build and create tables using R programming language. Output can be HTML, LaTeX, and RTF.
 
 
-** Parts of gt table**
+**Parts of gt table**
 
 <img width="473" alt="parts of gt table" src="https://user-images.githubusercontent.com/37122520/57220075-eb7ab600-6ff1-11e9-824c-fb63ad34947f.png">
 
