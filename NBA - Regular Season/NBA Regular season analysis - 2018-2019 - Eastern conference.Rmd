@@ -1,0 +1,93 @@
+---
+title: "NBA Regular season analysis - 2018-2019 - Eastern conference"
+author: "Juanma Martinez"
+date: "06/05/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+remotes::install_github("rstudio/gt")
+library(readr)
+library(dplyr)
+library(gt)
+
+NBAstas_Tableau_right <- read_csv("NBAstas_Tableau-right.csv")
+
+NBA_data<-NBAstas_Tableau_right %>% filter(Season_1 == "2018-2019")%>%
+  mutate(Three_Point_Percentage=`3P%`/100,
+         Field_Goal_Percentage= `FG%`/100,
+         Free_Throw_Percentage=`FT%`/100) %>%
+  select(1,4,5,6,8,30,31,32,33)
+
+colnames(NBA_data)
+
+NBA_data_2<- NBA_data[, c(1,6,2,3,5,4,7,8,9)]
+
+
+names(NBA_data_2)[1]<-"Team"
+names(NBA_data_2)[3]<-"Wins"
+names(NBA_data_2)[4]<-"Losses"
+names(NBA_data_2)[5]<-"Avg. Points per game"
+names(NBA_data_2)[6]<-"Win %"
+names(NBA_data_2)[7]<-"3 Point Field %"
+names(NBA_data_2)[8]<-"Field Goal %"
+names(NBA_data_2)[9]<-"Free Throw %"
+
+
+NBA_Eastern_Conference<-NBA_data_2%>%filter(Conference=="Eastern Conference")
+```
+
+## NBA Regular season analysis - 2018-2019 - Eastern conference
+
+Example with gt package with NBA data - "NBA Regular season analysis - 2018-2019 - Eastern conference".
+
+```{r pressure, echo=FALSE}
+
+NBA_gt_eastern<- NBA_Eastern_Conference %>% gt(
+  rowname_col = "Team",
+  groupname_col = "Conference"
+) %>%
+  tab_header(
+    title = md("**NBA** Stats"),
+    subtitle = md("Regular Season - `2018-2019`")
+    ) %>%
+  fmt_percent(
+    columns = vars(`Win %`,`3 Point Field %`,`Field Goal %`, `Free Throw %`),
+    decimals = 1
+  ) %>%
+  tab_footnote(
+    footnote = "Regular Season Analysis",
+    locations = cells_title(groups = "subtitle")
+    ) %>%
+  tab_source_note(
+    source_note = md(
+      "Source: NBA official page [stats.nba.com](https://stats.nba.com).")
+  )  %>%
+  tab_stubhead_label(label = md("**TEAM**")) %>%
+  tab_options(
+    table.width = pct(100),
+    #table.background.color = "lightgray",
+    row.padding = px(5),
+    heading.title.font.size = "small",
+    heading.subtitle.font.size = "small",
+    heading.background.color = "red",
+    column_labels.background.color = "lightgray"
+  )%>%
+  tab_spanner(
+    label = md("Percentage"),
+    columns = vars(`Win %`,`3 Point Field %`,`Field Goal %`, `Free Throw %`)
+  ) %>%
+  tab_spanner(
+    label = md("Regular Season Games"),
+    columns = vars(Wins, Losses)
+  )%>% 
+  cols_align(
+    align = "center",
+    columns = vars(Wins, Losses,`Avg. Points per game`, `Win %`,`3 Point Field %`,`Field Goal %`, `Free Throw %`)
+  )
+
+NBA_gt_eastern
+```
+
+
