@@ -1,7 +1,7 @@
 # gt-package
 
 
-New package which allows us to build and create tables using R programming language. Output can be HTML, LaTeX, and RTF.
+New package which allows us to build and format tables using R programming language. Output can be HTML, LaTeX, and RTF.
 
 
 **Parts of gt table**
