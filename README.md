@@ -22,3 +22,14 @@ Highly recommended to visit the following links.
 - [Guide](https://github.com/rstudio/gt)
 
 - [Reference](https://yutannihilation.github.io/gt/reference/index.html)
+
+
+<hr>
+
+# Examples 
+
+## Top 10 busiest station in Great Britain - April 2020 to March 2021
+
+![Table 1](https://user-images.githubusercontent.com/37122520/143762976-cdff8db6-6d1f-448d-918e-bc656800ccf3.jpg)
+
+![Table 2](https://user-images.githubusercontent.com/37122520/143762979-d8737ac0-e12f-4e75-b6e1-fe32db9b746a.jpg)
