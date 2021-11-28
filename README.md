@@ -30,6 +30,17 @@ Highly recommended to visit the following links.
 
 ## Top 10 busiest station in Great Britain - April 2020 to March 2021
 
-![Table 1](https://user-images.githubusercontent.com/37122520/143762976-cdff8db6-6d1f-448d-918e-bc656800ccf3.jpg)
 
-![Table 2](https://user-images.githubusercontent.com/37122520/143762979-d8737ac0-e12f-4e75-b6e1-fe32db9b746a.jpg)
+
+<img width="500" alt="Table 1" src="https://user-images.githubusercontent.com/37122520/143762976-cdff8db6-6d1f-448d-918e-bc656800ccf3.jpg">
+
+<hr>
+
+
+## Top 10 busiest station in Great Britain - April 2020 to March 2021 (2)
+
+
+
+<img width="500" alt="Table 2" src="https://user-images.githubusercontent.com/37122520/143763191-3e551569-22db-4ea1-967c-8c915a15271b.jpg">
+
+<hr>
